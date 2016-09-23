@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>
+Proyecto Planta
+</title>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+			  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+			  crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="container-temp" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="container-luz" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<div id="container-agua" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script type="text/javascript">
+$(function () {
+    $('#container-temp').highcharts({
+        title: {
+            text: 'Temperatura ambiente',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: [ '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '12:00', '15:00', '18:00', '21:00', '0:00']
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature (°C)'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808780'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        series: [{
+            name: ' ',
+            data: [0, 0, 0, ,0]
+        }]
+    });
+
+    $('#container-luz').highcharts({
+        title: {
+            text: 'Luz',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: [ '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '12:00', '15:00', '18:00', '21:00', '0:00']
+        },
+        yAxis: {
+            title: {
+                text: 'Luz'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        series: [{
+            name: ' ',
+            data: [0, 0]
+        }]
+    });
+
+    $('#container-agua').highcharts({
+        title: {
+            text: 'Humedad',
+            x: -20 //center
+        },
+        xAxis: {
+            categories: [ '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '12:00', '15:00', '18:00', '21:00', '0:00']
+        },
+        yAxis: {
+            title: {
+                text: 'Agua'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        series: [{
+            name: ' ',
+            data: [0, 0]
+        }]
+    });
+});
+</script>
+</body>
+</html>
